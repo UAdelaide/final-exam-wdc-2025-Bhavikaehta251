@@ -8,7 +8,7 @@ var usersRouter = require('./routes/users');
 
 var dogsRouter = require('./routes/dogs');
 var walkRequestsRouter = require('./routes/walkRequests');
-var walkersRouter = require('./routes,walkers');
+var walkersRouter = require('./routes/walkers');
 
 
 
