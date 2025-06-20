@@ -71,7 +71,7 @@
             });
             const responsedata = await loginresponse.json()
             console.log(responsedata.status)
-            if(responsedata.ok){
+            if(responsedata.status == 200){
               const user = data.user;
               sessionStorage.setItem('loggedInUser', user.username);
               sessionStorage.setItem('role', user.role);
