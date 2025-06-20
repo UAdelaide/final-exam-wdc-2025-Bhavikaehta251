@@ -4,7 +4,7 @@ require('dotenv').config();
 const session = require('express-session');
 const app = express();
 app.use(session({
-    secret: 'Bhavika Mehta’,
+    secret: 'Bhavika Mehta',
     resave: false,
     saveUninitialized: false,
     cookie: {
