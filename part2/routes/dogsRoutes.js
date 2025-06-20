@@ -15,5 +15,19 @@ router.get('/', async (req, res) => {
   }
 });
 
+router.get('/api/my-dogs', async (req, res) => {
+    const { owner } = req.query;
+    try {
+      const [rows] = await db.query(`
+        SELECT dog_id, name FROM Dogs
+        JOIN Users ON Dogs.owner_id = Users.user_id
+        WHERE Users.username = ?
+      `, [owner]);
+      res.json(rows);
+    } catch (err) {
+      res.status(500).json({ error: 'Failed to load dogs' });
+    }
+  });
+
 
 module.exports = router;
