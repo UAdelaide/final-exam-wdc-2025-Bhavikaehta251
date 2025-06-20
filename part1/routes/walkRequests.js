@@ -4,9 +4,9 @@ const db = require('../db');
 
 router.get('/open', async (requestAnimationFrame, res) => {
     try{
-        const[rows] = await db.query(''
-
-        )
+        const[rows] = await db.query('
+            
+            ')
     }
 }
 );
