@@ -85,6 +85,7 @@
         const error = ref('');
         const user = ref(sessionStorage.getItem('loggedInUser') || '');
         console.log(user.value)
+        console.log(`/api/dogs/user-dogs?owner=${encodeURIComponent(user.value)}`)
 
         async function loadWalks() {
           try {
@@ -97,8 +98,8 @@
 
         async function fetchUserDogs() {
       try {
-        const res = await fetch(`/api/dogs/user-dogs?owner=${user.value)}`);
-        console.log(`/api/dogs/user-dogs?owner=${encodeURIComponent(user.value)}`)
+        const res = await fetch(`/api/dogs/user-dogs?owner=${user.value}`);
+
         if (!res.ok) throw new Error('Failed to load your dogs');
         myDogs.value = await res.json();
       } catch (err) {
