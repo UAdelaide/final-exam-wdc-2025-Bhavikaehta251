@@ -57,7 +57,7 @@ router.post('/login', async (req, res) => {
 
 router.get('/me', async (req, res) => {
   try {
-    const username = req.session.username || null;
+    const username = req.session.loggedInUser || null;
 
     if (!username) return res.status(401).json({ error: 'Not logged in' });
 
