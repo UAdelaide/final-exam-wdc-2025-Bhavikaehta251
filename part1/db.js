@@ -9,10 +9,15 @@ const db = mysql.createPool({
 });
 module.exports = db;
 
-CREATE TABLE Dogs (
-    dog_id INT AUTO_INCREMENT PRIMARY KEY,
-    owner_id INT NOT NULL,
-    name VARCHAR(50) NOT NULL,
-    size ENUM('small', 'medium', 'large') NOT NULL,
-    FOREIGN KEY (owner_id) REFERENCES Users(user_id)
-);
+// db.js
+const mysql = require('mysql2/promise');
+require('dotenv').config();
+
+const pool = mysql.createPool({
+  host: process.env.DB_HOST,
+  user: process.env.DB_USER,
+  password: process.env.DB_PASSWORD,
+  database: process.env.DB_NAME,
+});
+
+module.exports = pool;
