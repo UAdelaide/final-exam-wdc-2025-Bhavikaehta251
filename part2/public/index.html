@@ -39,7 +39,15 @@
       <div class="row row-cols-1 row-cols-md-3 g-4">
         <div v-for="dog in dogs" :key="dog.name" class="col">
           <table>
-            th
+            <thead>
+              <th>Dog ID</th>
+              <th></th>
+
+              <th></th>
+              <th></th>
+              <th></th>
+
+            </thead>
           </table>
           <div class="card h-100">
             <img :src="dog.image" class="card-img-top" alt="Dog image" style="height: 200px; object-fit: cover;">
