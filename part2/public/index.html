@@ -72,7 +72,11 @@
             const responsedata = await loginresponse.json()
             console.log(responsedata)
             if(responsedata.ok){
-              
+              const user = data.user;
+              sessionStorage.setItem('loggedInUser', user.username);
+              sessionStorage.setItem('role', user.role);
+              this.sessionUser = user.username;
+              this.loggedIn = true;
             }
           }
           catch(error){
