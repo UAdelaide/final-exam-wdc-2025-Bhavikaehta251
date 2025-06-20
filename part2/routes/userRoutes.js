@@ -42,7 +42,7 @@ function ensureLoggedIn(req, res, next) {
   next();
 }
 router.get('/me', ensureLoggedIn, (req, res) => {
-  res.json(req.session.user_id);
+  res.json(req.session.user);
 });
 
 
