@@ -101,7 +101,7 @@
         const res = await fetch(`/api/dogs/user-dogs?owner=${encodeURIComponent(user.value)}`);
         console.log(`/api/dogs/user-dogs?owner=${encodeURIComponent(user.value)}`)
         // if (!res.ok) throw new Error('Failed to load your dogs');
-        myDogs = await res.json();
+        myDogs.value = await res.json();
         console.log(myDogs.value)
       } catch (err) {
         error.value = 'Could not load dogs';
@@ -151,6 +151,7 @@
           error,
           logout,
           fetchUserDogs,
+          myDogs,
           submitWalkRequest
         };
       }
