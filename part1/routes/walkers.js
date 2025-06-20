@@ -17,7 +17,7 @@ router.get('/summary', async (req, res) => {
     res.json(rows);
     }
     catch(err){
-        res.status()
+        res.status(500).json({ error:err})
     }
 }
 
