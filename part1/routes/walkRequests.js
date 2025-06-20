@@ -18,7 +18,5 @@ router.get('/open', async (requestAnimationFrame, res) => {
     }
 
 
-
-}
-);
+});
 module.exports = router;
