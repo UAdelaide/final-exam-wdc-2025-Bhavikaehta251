@@ -70,7 +70,7 @@
               })
             });
             const responsedata = await loginresponse.json()
-            console.log(responsedata.)
+            console.log(responsedata.status)
             if(responsedata.ok){
               const user = data.user;
               sessionStorage.setItem('loggedInUser', user.username);
