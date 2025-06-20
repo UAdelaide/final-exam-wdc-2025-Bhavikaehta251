@@ -11,7 +11,10 @@ router.get('/open', async (requestAnimationFrame, res) => {
       JOIN Users u ON d.owner_id = u.user_id
       WHERE wr.status = 'open'
     `)
-    };
     res.json(rows);
+    };
+    
+
+
 }
 );
