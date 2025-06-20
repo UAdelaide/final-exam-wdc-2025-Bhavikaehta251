@@ -98,7 +98,7 @@
         async function fetchUserDogs() {
       try {
         const res = await fetch(`/api/user-dogs?owner=${encodeURIComponent(user.value)}`);
-        console.log(res)
+        console.log(res.json())
         if (!res.ok) throw new Error('Failed to load your dogs');
         myDogs.value = await res.json();
       } catch (err) {
