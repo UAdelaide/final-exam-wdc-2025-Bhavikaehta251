@@ -46,7 +46,7 @@
         const message = ref('');
         const error = ref('');
         const user = ref(sessionStorage.getItem('loggedInUser') || '');
-        const userI
+        const userId = ref('');
 
         async function loadWalkRequests() {
           try {
