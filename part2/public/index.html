@@ -59,7 +59,7 @@
       methods: {
         async login(){
           try{
-            const loninresponse = await fetch("/api/login", {
+            const loginresponse = await fetch("/api/login", {
               method: "POST",
               headers:  {
                 'Content-Type': 'application/json'
@@ -69,7 +69,7 @@
                 password: this.password
               })
             });
-            const 
+            const responsedata = await
           }
         }
       }
