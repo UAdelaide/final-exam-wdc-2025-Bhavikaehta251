@@ -7,7 +7,7 @@ var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 
 var dogsRouter = require('./routes/dogs');
-var walkRequestsRouter = require('./route')
+var walkRequestsRouter = require('./routes/walkRequests')
 
 
 
@@ -21,6 +21,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
+app
 
 app.use('/api/dogs', dogsRouter);
 
