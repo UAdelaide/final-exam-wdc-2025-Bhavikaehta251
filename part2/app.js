@@ -4,6 +4,26 @@ require('dotenv').config();
 
 const app = express();
 
+
+var session = require('express-session'); // THIS CODE //
+var app = express();
+app.use(logger('dev'));
+app.use(express.json());
+app.use(express.urlencoded({ extended: false }));
+app.use(cookieParser());
+app.use(session({ // //
+secret: ‘a string of your choice’, // //
+resave: false, // THIS CODE //
+saveUninitialized: true, // //
+cookie: { secure: false } // //
+})); // //
+app.use(express.static(path.join(__dirname, 'public')));
+app.use('/', indexRouter);
+app.use('/users', usersRouter);
+module.exports = app;
+
+
+
 // Middleware
 app.use(express.json());
 app.use(express.static(path.join(__dirname, '/public')));
