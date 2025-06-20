@@ -12,8 +12,11 @@ router.get('/open', async (requestAnimationFrame, res) => {
       WHERE wr.status = 'open'
     `)
     res.json(rows);
-    };
-    
+    }
+    catch(err){
+        
+    }
+
 
 
 }
