@@ -55,24 +55,24 @@ router.post('/login', async (req, res) => {
   }
 });
 
-router.get('/me', async (req, res) => {
-  try {
-    const username = req.session.loggedInUser || null;
-    res.json(username);
+// router.get('/me', async (req, res) => {
+//   try {
+//     const username = req.session.loggedInUser || null;
+//     res.json(username);
 
-    // if (!username) return res.status(401).json({ error: 'Not logged in' });
+//     if (!username) return res.status(401).json({ error: 'Not logged in' });
 
-    // const [rows] = await db.query(`
-    //   SELECT user_id, username, role FROM Users
-    //   WHERE username = ?
-    // `, [username]);
+//     const [rows] = await db.query(`
+//       SELECT user_id, username, role FROM Users
+//       WHERE username = ?
+//     `, [username]);
 
-    // if (rows.length === 0) return res.status(404).json({ error: 'User not found' });
+//     if (rows.length === 0) return res.status(404).json({ error: 'User not found' });
 
-    // res.json(rows[0]);
-  } catch (err) {
-    res.status(500).json({ error: 'Internal server error' });
-  }
-});
+//     res.json(rows[0]);
+//   } catch (err) {
+//     res.status(500).json({ error: 'Internal server error' });
+//   }
+// });
 
 module.exports = router;
