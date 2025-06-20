@@ -4,6 +4,6 @@ const db = require('../db');
 
 router.get('/', async (req, res) => {
     try {
-        const []
+        const [rows] = await 
     }
 }
