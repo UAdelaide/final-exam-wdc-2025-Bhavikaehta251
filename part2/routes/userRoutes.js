@@ -55,7 +55,7 @@ router.post('/login', async (req, res) => {
   }
 });
 
-router.get('/api/users/me', async (req, res) => {
+router.get('/me', async (req, res) => {
   try {
     const username = req.session.username || null;
 
