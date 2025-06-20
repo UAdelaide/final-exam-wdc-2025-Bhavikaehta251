@@ -23,7 +23,7 @@ app.use('/', indexRouter);
 app.use('/users', usersRouter);
 
 app.use('/api/dogs', dogsRouter);
-app.use('/api/')
+app.use('/api/walkRequests', walkRequestsRouter)
 
 
 
