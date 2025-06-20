@@ -15,7 +15,7 @@ router.get('/', async (req, res) => {
   }
 });
 
-router.get('/api/my-dogs', async (req, res) => {
+router.get('/api/user-dogs', async (req, res) => {
     const { owner } = req.query;
     try {
       const [rows] = await db.query(`
