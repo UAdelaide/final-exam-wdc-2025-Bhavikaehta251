@@ -96,6 +96,28 @@
             console.log(error)
           }
         }
+        async fetchAllDogs() {
+  try {
+    const dogsData = await fetch('/api/dogs');
+    const dogs = await dogsData.json();
+
+    // random image for each dog
+    const imagesOfDogs = await Promise.all(
+      dogs.map(dog =>
+        fetch('https://dog.ceo/api/breeds/image/random')
+          .then(res => res.json())
+          .then(data => ({
+            ...dog,
+            image: data.message
+          }))
+      )
+    );
+
+    this.dogs = imagesOfDogs;
+  } catch (err) {
+    console.error('Error loading dogs:', err);
+  }
+}
       }
     }).mount('#app');
   </script>
