@@ -86,7 +86,6 @@
         const error = ref('');
         const user = ref(sessionStorage.getItem('loggedInUser') || '');
         console.log(user.value)
-        const userId = ref('');
 
         async function loadWalks() {
           try {
@@ -108,20 +107,6 @@
         error.value = 'Could not load dogs';
       }
     }
-
-    async function getCurrentUser() {
-          try {
-            const res = await fetch('/api/users/me');
-            if (!res.ok) throw new Error('Unable to fetch user info');
-            const data = await res.json();
-            console.log(data)
-            userId.value = data.user_id;
-            console.log('Logged-in user ID:', userId.value);
-          } catch (err) {
-            error.value = 'Failed to load current user';
-            console.error(err);
-          }
-        }
 
         async function submitWalkRequest() {
           try {
@@ -167,8 +152,7 @@
           logout,
           fetchUserDogs,
           userowenedDogs,
-          submitWalkRequest,
-          getCurrentUser
+          submitWalkRequest
         };
       }
     }).mount('#app');
