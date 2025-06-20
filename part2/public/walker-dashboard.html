@@ -75,6 +75,10 @@
             message.value = '';
           }
         }
+        logout() {
+          sessionStorage.clear();
+          window.location.href = 'index.html';
+        }
 
         onMounted(() => {
           loadWalkRequests();
