@@ -78,7 +78,18 @@
         }
 
 
-
+        async function getCurrentUser() {
+          try {
+            const res = await fetch('/api/users/me');
+            if (!res.ok) throw new Error('Unable to fetch user info');
+            const data = await res.json();
+            userId.value = data.user_id;
+            console.log('Logged-in user ID:', userId.value);
+          } catch (err) {
+            error.value = 'Failed to load current user';
+            console.error(err);
+          }
+        }
 
 
         function logout() {
