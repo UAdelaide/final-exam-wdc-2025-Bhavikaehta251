@@ -36,7 +36,7 @@ router.post('/register', async (req, res) => {
 // });
 
 function ensureLoggedIn(req, res, next) {
-  if (!req.session.user) {
+  if (!req.session.user_id) {
     return res.status(401).json({ error: 'Not logged in' });
   }
   next();
