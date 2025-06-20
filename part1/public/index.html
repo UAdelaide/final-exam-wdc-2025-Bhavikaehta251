@@ -7,12 +7,39 @@
 </head>
 
 <body>
-    <!-- <h1>Express</h1>
-    <p>Welcome to Express</p> -->
+    <div id="app">
+      <h1>Dog App</h1>
 
-    <div id="dog-image" class="dog-container">
-        <h1>Dog of the Day</h1>
+      <p>Here's the dog of the day!</p>
 
-      </div>
-</body>
+      <img :src="dogImage" width="300">
+      <p>Name: Sparky</p>
+      <p>Breed: Unknown</p>
+      <button class="button" @click="fetchDog">Click Here</button>
+    </div>
+
+    <script>
+      const { createApp } = Vue;
+
+      createApp({
+        data() {
+          return {
+            dogImage: ''
+          }
+        },
+        mounted() {
+          this.fetchDog();
+        },
+        methods: {
+          fetchDog() {
+            fetch('https://dog.ceo/api/breeds/image/random')
+              .then(res => res.json())
+              .then(data => {
+                this.dogImage = data.message;
+              });
+          }
+        }
+      }).mount('#app');
+    </script>
+  </body>
 </html>
