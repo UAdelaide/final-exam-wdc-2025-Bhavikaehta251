@@ -23,7 +23,7 @@
             <label class="form-label">Select Your Dog</label>
             <select v-model="form.dog_id" class="form-select" required>
               <option disabled value="">Select a dog</option>
-              <option v-for="dog in myDogs" :value="dog.dog_id" :key="dog.dog_id">{{ dog.name }}</option>
+              <option v-for="dog in userowenedDogs" :value="dog.dog_id" :key="dog.dog_id">{{ dog.name }}</option>
             </select>
           </div>
           <div class="mb-3">
@@ -80,7 +80,7 @@
           location: ''
         });
 
-        const myDogs = ref([]);
+        const userowenedDogs = ref([]);
         const walks = ref([]);
         const message = ref('');
         const error = ref('');
@@ -101,8 +101,8 @@
         const res = await fetch(`/api/dogs/user-dogs?owner=${encodeURIComponent(user.value)}`);
         console.log(`/api/dogs/user-dogs?owner=${encodeURIComponent(user.value)}`)
         // if (!res.ok) throw new Error('Failed to load your dogs');
-        myDogs.value = await res.json();
-        console.log(myDogs.value)
+        userowenedDogs.value = await res.json();
+        console.log(userowenedDogs.value)
       } catch (err) {
         error.value = 'Could not load dogs';
       }
@@ -151,7 +151,7 @@
           error,
           logout,
           fetchUserDogs,
-          myDogs,
+          userowenedDogs,
           submitWalkRequest
         };
       }
