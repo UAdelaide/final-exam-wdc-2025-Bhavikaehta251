@@ -25,7 +25,7 @@ app.use('/users', usersRouter);
 
 app.use('/api/dogs', dogsRouter);
 app.use('/api/walkRequests', walkRequestsRouter);
-app.use('/api/walkRequests', walkRequestsRouter);
+app.use('/api/walkers', walkersRouter);
 
 
 
