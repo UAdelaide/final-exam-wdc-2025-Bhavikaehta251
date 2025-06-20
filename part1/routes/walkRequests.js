@@ -4,7 +4,7 @@ const db = require('../db');
 
 router.get('/open', async (requestAnimationFrame, res) => {
     try{
-        
+        const[rows] = 
     }
 }
 );
