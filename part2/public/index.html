@@ -117,7 +117,8 @@
         async fetchAllDogs() {
           try {
             const dogsData = await fetch('/api/dogs');
-            const console.log(dogs = await dogsData.json();
+            const dogs = await dogsData.json();
+            console.log(dogs)
 
             // random image for each dog
             const imagesOfDogs = await Promise.all(
