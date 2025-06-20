@@ -38,6 +38,9 @@
       <div v-if="dogs.length === 0" class="text-muted">No dogs to show.</div>
       <div class="row row-cols-1 row-cols-md-3 g-4">
         <div v-for="dog in dogs" :key="dog.name" class="col">
+          <table>
+            th
+          </table>
           <div class="card h-100">
             <img :src="dog.image" class="card-img-top" alt="Dog image" style="height: 200px; object-fit: cover;">
             <div class="card-body">
@@ -45,6 +48,7 @@
               <p class="card-text">Size: {{ dog.size }}</p>
             </div>
           </div>
+
         </div>
       </div>
     </div>
