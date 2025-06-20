@@ -3,7 +3,8 @@ const router = express.Router();
 const db = require('../db');
 
 router.get('/open', async (requestAnimationFrame, res) => {
-    
+    try{
+        
+    }
 }
-
 );
