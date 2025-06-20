@@ -78,7 +78,15 @@
               this.uSersession = user.username;
               this.isUserLogedIn = true;
 
-              setTimeout
+              setTimeout(() => {
+                if (user.role === 'owner') {
+                  window.location.href = 'owner-dashboard.html';
+                } else if (user.role === 'walker') {
+                  window.location.href = 'walker-dashboard.html';
+                } else {
+                  alert('Unknown role. Please contact support.');
+                }
+              }, 1500);
             }
           }
           catch(error){
