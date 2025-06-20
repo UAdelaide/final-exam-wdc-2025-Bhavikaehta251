@@ -6,7 +6,7 @@ router.get('/open', async (requestAnimationFrame, res) => {
     try{
         const[rows] = await db.query('
             
-            ')
+        ')
     }
 }
 );
