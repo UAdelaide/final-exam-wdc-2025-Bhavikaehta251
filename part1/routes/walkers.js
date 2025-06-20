@@ -16,6 +16,9 @@ router.get('/summary', async (req, res) => {
     `);
     res.json(rows);
     }
+    catch(er){
+
+    }
 }
 
 );
