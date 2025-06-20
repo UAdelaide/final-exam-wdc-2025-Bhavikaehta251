@@ -8,7 +8,7 @@ var usersRouter = require('./routes/users');
 
 var dogsRouter = require('./routes/dogs');
 var walkRequestsRouter = require('./routes/walkRequests');
-var walkersRouter = require('./routes');
+var walkersRouter = require('./routes,walkers');
 
 
 
@@ -25,6 +25,8 @@ app.use('/users', usersRouter);
 
 app.use('/api/dogs', dogsRouter);
 app.use('/api/walkRequests', walkRequestsRouter);
+app.use('/api/walkRequests', walkRequestsRouter);
+
 
 
 module.exports = app;
