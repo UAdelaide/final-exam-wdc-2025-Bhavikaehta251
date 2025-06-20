@@ -1,0 +1,114 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Express</title>
+    <link rel="stylesheet" href="/stylesheets/style.css">
+</head>
+
+<body>
+    <h1>Express</h1>
+    <p>Welcome to Express</p>
+</body>
+</html> -->
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Dog of the Day</title>
+  <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+  <style>
+    body {
+      /* background-color: #ffccff; */
+      font-family: sans-serif;
+      color: lime;
+      font-size: 12px;
+      margin: 20px;
+    }
+
+    h1 {
+      text-align: center;
+      font-size: 36px;
+      /* background: linear-gradient(to right, red, yellow); */
+      color: #000;
+    }
+
+    .container {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+    }
+
+    .dog-image {
+      /* border: 10px dotted purple; */
+      border: 6px solid #000;
+      /* width: 350px;
+      height: 350px; */
+      margin: 50px;
+    }
+
+    .details {
+      width: 50%;
+      font-weight: bold;
+      text-shadow: 1px 1px 5px blue;
+    }
+
+    button {
+      margin-top: 50px;
+      background-color: orange;
+      padding: 20px;
+      border-radius: 20px;
+      font-size: 20px;
+      cursor: crosshair;
+    }
+  </style>
+</head>
+<body>
+  <div id="app">
+    <h1>Dog of the Day</h1>
+
+    <div class="container">
+      <img class="dog-image" :src="dogImage" />
+
+
+    </div>
+    <div class="details">
+        <!-- <p><strong>Name:</strong> Fluffinator</p>
+        <p><strong>Breed:</strong> Mystery Mix</p>
+        <p><strong>Likes:</strong> Balloons, Bacon, Barking</p>
+        <p><strong>Dislikes:</strong> Vacuums, Raincoats, Cats</p> -->
+
+        <button @click="getDog">Load Another Dog</button>
+        <button @click="alert('You clicked this for no reason!')"> Button</button>
+      </div>
+  </div>
+
+  <script>
+    const { createApp } = Vue;
+
+    createApp({
+      data() {
+        return {
+          dogImage: ''
+        };
+      },
+      methods: {
+        async getDog() {
+          const res = await fetch('https://dog.ceo/api/breeds/image/random');
+          const data = await res.json();
+          this.dogImage = data.message;
+        }
+      },
+      mounted() {
+        this.getDog();
+      }
+    }).mount('#app');
+  </script>
+</body>
+</html>
