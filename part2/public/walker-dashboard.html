@@ -87,7 +87,7 @@
             const data = await res.json();
             console.log(data)
             user.value = data.user_id;
-            console.log('Logged-in user ID:', userId.value);
+            console.log('Logged-in user ID:', user);
           } catch (err) {
             error.value = 'Failed to load current user';
             console.error(err);
