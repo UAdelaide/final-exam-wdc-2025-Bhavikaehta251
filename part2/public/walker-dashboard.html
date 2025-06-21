@@ -85,7 +85,7 @@
             if (!res.ok) throw new Error('Unable to fetch user info');
             const data = await res.json();
             console.log(data)
-            userId.value = data.user_id;
+            user.value = data.user_id;
             console.log('Logged-in user ID:', userId.value);
           } catch (err) {
             error.value = 'Failed to load current user';
